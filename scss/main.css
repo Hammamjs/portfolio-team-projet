@@ -1,0 +1,100 @@
+/*Start Global changes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*End Global changes */
+/* Strat Header */
+.header {
+  width: 100%;
+  height: 100vh;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9098039216);
+}
+.header .canv {
+  z-index: -1;
+}
+.header .nav {
+  background-color: #000;
+  position: relative;
+  z-index: 55;
+  color: #E1D9D1;
+}
+.header .nav svg {
+  cursor: pointer;
+}
+.header .list li {
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 1s;
+}
+.header .list li:hover {
+  opacity: 1;
+}
+.header .list li.active {
+  opacity: 1;
+}
+.header .list li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #E1D9D1;
+  padding: 0 10px;
+}
+.header .content {
+  position: absolute;
+  z-index: 55;
+  color: #E1D9D1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.header .content p {
+  font-size: 18px;
+  line-height: 1.5;
+  width: 300px;
+}
+
+/* End Header */
+@media (max-width: 767px) {
+  .nav ul {
+    top: 40px;
+    right: 0;
+    background: #000;
+    position: absolute;
+    width: 100%;
+    display: none;
+    transition: 1s;
+    padding: 10px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+  }
+  .nav ul.display {
+    display: block;
+  }
+  .nav ul li {
+    border-bottom: 1px solid rgba(225, 217, 209, 0.1803921569);
+    padding: 10px;
+    width: 100%;
+  }
+  .nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

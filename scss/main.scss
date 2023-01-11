@@ -1,0 +1,104 @@
+@import 'variables';
+/*Start Global changes */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin index($position) {
+    position: $position;
+    z-index: 55;
+    color : $color;
+}
+/*End Global changes */
+
+/* Strat Header */
+.header {
+    width: 100%;
+    height: 100vh;
+    &::before {
+        content: '';
+        position : absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left : 0;
+        background-color: #000000e8;
+    }
+    .canv {
+        z-index: -1;
+    }
+    .nav {
+        background-color: $background;
+        @include index(relative);
+        svg {
+            cursor: pointer;
+        }
+    }
+    .list {
+        li {
+            margin-right: 10px;
+            opacity: .5;
+            &:hover{
+                opacity: 1;
+            }
+            &.active {
+                opacity: 1;
+            }
+            transition: $transition;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $color;
+                padding: 0 10px;
+            }
+    }
+    }
+    .content {
+        @include index(absolute);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        p {
+            font-size : 18px;
+            line-height: 1.5;
+            width : 300px;
+        }
+}
+}
+
+/* End Header */
+            @media (max-width : 767px) {
+                
+                .nav ul {
+                    top: 40px;
+                    right: 0;
+                    background: $background;
+                    position: absolute;
+                    width: 100%;
+                    display: none;
+                    transition: $transition;
+                    padding: 10px;
+                    -webkit-transition: $transition;
+                    -moz-transition: $transition;
+                    -ms-transition: $transition;
+                    -o-transition: $transition;
+                    &.display{
+                        display: block;
+                    }
+                    & li {
+                        border-bottom: 1px solid #e1d9d12e;
+                        padding: 10px;
+                        width : 100%;
+                        a {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
